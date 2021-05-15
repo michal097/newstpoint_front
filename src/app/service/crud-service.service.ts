@@ -10,7 +10,7 @@ export class CrudServiceService {
   constructor(private http: HttpClient) {
   }
 
-  url: string = 'https://newspoint-backend.herokuapp.com';
+  url: string = 'http://localhost:8080';
 
 
   upload(file: File): Observable<any> {
