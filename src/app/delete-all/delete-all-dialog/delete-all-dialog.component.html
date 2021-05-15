@@ -1,0 +1,8 @@
+<div *ngIf="userDeletedInfo" class="alert alert-success" role="alert">
+  {{userDeletedInfo}}
+</div>
+<h3>Are you sure to delete all users from database? </h3>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-raised-button color="accent" (click)="deleteAllUsers()" cdkFocusInitial>Ok</button>
+</div>

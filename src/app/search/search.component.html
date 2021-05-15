@@ -1,0 +1,19 @@
+<div class="container">
+  <br>
+  <mat-card *ngIf="searchUsers.length === 0">
+    <h2>There is no search results</h2>
+  </mat-card>
+  <mat-card *ngIf="searchUsers.length !== 0">
+    <h2>Search results ({{searchUsers.length}})</h2>
+    <div *ngFor="let users of searchUsers">
+
+      <mat-card>
+        <p> First name: {{ users.firstName }}</p>
+        <p>Last name: {{ users.lastName}}</p>
+        <p>Age: {{ users.birthDate}}</p>
+        <p>Phone number: {{ users.phoneNumber}}</p>
+      </mat-card>
+      <br>
+    </div>
+  </mat-card>
+</div>

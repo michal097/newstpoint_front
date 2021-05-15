@@ -1,0 +1,18 @@
+<div class="container">
+  <br>
+  <div *ngIf="uploadInfoSucc" class="alert alert-success" role="alert">
+    {{uploadInfoSucc}}
+  </div>
+  <div *ngIf="uploadInfoErr" class="alert alert-danger" role="alert">
+    {{uploadInfoErr}}
+  </div>
+  <button id="selectUploadFile" matTooltip="select file to upload" mat-raised-button (click)="openInput()">
+    <b>{{uploadButton}}</b></button>
+
+  <input id="fileInput" hidden type="file" (change)="onChange($event)" name="file" accept=".csv">
+  <button id="uploadFile" (click)="onUpload()"
+          mat-raised-button color="primary"
+          matTooltip="click here to upload file ">
+    Upload
+  </button>
+</div>

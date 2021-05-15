@@ -1,0 +1,17 @@
+<div class="container">
+  <br>
+  <mat-card *ngIf="user=== null || user=== undefined">
+    <h2>No results</h2>
+  </mat-card>
+  <br><br>
+  <mat-card *ngIf="user!== null && user!== undefined">
+    <h2>The oldest person in database</h2>
+    <p>First name: {{user.firstName}}</p>
+    <p>Last name: {{user.lastName}}</p>
+    <p>Age: {{user.birthDate}}</p>
+    <p>Phone number: {{user.phoneNumber}}</p>
+
+  </mat-card>
+
+
+</div>
