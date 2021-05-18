@@ -36,15 +36,18 @@ export class ImportCsvComponent implements OnInit {
   }
 
   onUpload() {
+    if(this.file === null){
+      this.uploadInfoErr = 'You have not selected any file!'
+    }else
     this.service.upload(this.file).subscribe(
-      () => {
-        this.uploadInfoSucc = 'File has been uploaded';
-        this.uploadInfoErr = '';
-      },
-      () => {
-        this.uploadInfoErr = 'File cannot be upload';
-        this.uploadInfoSucc = '';
-      }
-    );
+        () => {
+          this.uploadInfoSucc = 'File has been uploaded';
+          this.uploadInfoErr = '';
+        },
+        (resp) => {
+          this.uploadInfoErr = Object.values(resp.error).toString();
+          this.uploadInfoSucc = '';
+        }
+      );
   }
 }
